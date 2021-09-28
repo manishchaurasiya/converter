@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Converter - length</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="left">
+				<a href="#">Converter</a>
+			</div>
+			<div class="right">
+				<ul>
+					<li><a href="index.html">Age</a></li>
+					<li><a href="length.html">length</a></li>
+					<li><a href="temperature.html">Temprature</a></li>
+					<li><a href="#">Image</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<section class="age">
+		<div class="content">
+			<h2>Length Converter</h3>
+		    <input type="number" name="length" id="length" placeholder="Enter number"  class="ml" onchange ="calculateLength()">
+		    <span id="error1">Error message</span>
+		  <div class="main"> 
+		  <div class="left">
+		    	<h3 style="margin-left: 1rem;margin-bottom: 1rem;">From</h3>
+			<select name="choose" id="from" size="8" onchange="calculateLength()">
+				<option value="meter" id="autofocus" selected>meter[m]</option>
+				<option value="kilometer">kilometer[k]</option>
+				<option value="decimeter">decimeter[dm]</option>
+				<option value="centimeter">centimeter[cm]</option>
+				<option value="milimeter">milimeter[mm]</option>
+				<option value="nanometer">nanometer[nm]</option>
+				<option value="mile">mile[mi]</option>
+				<option value="yard">yard[yd]</option>
+				<option value="foot">foot[ft]</option>
+				<option value="inch">inch[in]</option>
+			</select>
+		   </div>
+		<div class="right">
+				<h3 style="margin-left: 1rem;margin-bottom: 1rem;">To</h3>
+			<select name="choose" id="to" size="8" onchange="calculateLength()">
+				<option value="meter" class="autofocus">meter[m]</option>
+				<option value="kilometer" selected>kilometer[k]</option>
+				<option value="decimeter">decimeter[dm]</option>
+				<option value="centimeter">centimeter[cm]</option>
+				<option value="milimeter">milimeter[mm]</option>
+				<option value="nanometer">nanometer[nm]</option>
+				<option value="mile">mile[mi]</option>
+				<option value="yard">yard[yd]</option>
+				<option value="foot">foot[ft]</option>
+				<option value="inch">inch[in]</option>
+			</select>
+		</div>	
+		</div> 			
+		<div class="result" id="result" style="background: #fff;">
+			<button >copy</button>
+			<div class="show_length">
+			     <span id="show_length_result">hihi</span>
+
+			</div>
+		</div>
+		
+		</div>
+	</section>
+	<script>
+		function calculateLength() 
+		{
+			let number=document.getElementById('length').value;
+			let from=document.getElementById('from').value;
+			let to= document.getElementById('to').value;
+			
+			if (number=="") 
+			{
+				document.getElementById('error1').style.display="block";
+				document.getElementById('error1').innerHTML="Please enter number here!";
+			}
+			else
+			{
+			document.getElementById('result').style.display="block";
+			document.getElementById('error1').style.visibility="hidden";
+			  if (from=='meter' && to=="meter")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				  }
+				else if(from=='meter' && to=="kilometer")
+				 {
+					//document.getElementById('result').style.display="block";
+					let kilometer= number*0.001;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer.toFixed(3)+" "+to;
+				}
+				else if(from=='meter' && to=="decimeter")
+				 {
+					//document.getElementById('result').style.display="block";
+					let decimeter= number*10;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter.toFixed(2)+" "+to;
+				}
+				else if(from=='meter' && to=="centimeter")
+				 {
+					//document.getElementById('result').style.display="block";
+					let centimeter= number*100;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+centimeter.toFixed(2)+" "+to;
+				}
+				else if(from=='meter' && to=="milimeter")
+				 {
+					//document.getElementById('result').style.display="block";
+					let milimeter= number*1000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter.toFixed(2)+" "+to;
+				}
+				else if(from=='meter' && to=="nanometer")
+				 {
+					//document.getElementById('result').style.display="block";
+					let nanometer= number* 1000000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer.toFixed(2)+" "+to;
+				}
+				else if(from=='meter' && to=="mile")
+				 {
+					//document.getElementById('result').style.display="block";
+					let mile= number* 0.0006213712;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile.toFixed(6)+" "+to;
+				}
+				else if(from=='meter' && to=="yard")
+				 {
+					//document.getElementById('result').style.display="block";
+					let yard= number* 1.0936132983 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(2)+" "+to;
+				}
+				else if(from=='meter' && to=="foot")
+				 {
+					//document.getElementById('result').style.display="block";
+					let foot= number* 3.280839895  ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+foot.toFixed(2)+" "+to;
+				}
+				else if(from=='meter' && to=="inch")
+				 {
+					let inch= number* 39.3700787402   ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch.toFixed(2)+" "+to;
+				}
+ //----------------------kilometer----------------
+
+				else if (from=='kilometer' && to=="meter")
+				 {
+					let meter=number*1000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='kilometer' && to=="kilometer")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='kilometer' && to=="decimeter")
+				 {
+					let decimeter= number*10000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='kilometer' && to=="centimeter")
+				 {
+					let centimeter= number*100000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+centimeter+" "+to;
+				}
+				else if(from=='kilometer' && to=="milimeter")
+				 {
+					let milimeter= number*1000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='kilometer' && to=="nanometer")
+				 {
+					let nanometer= number* 1000000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='kilometer' && to=="mile")
+				 {
+					let mile= number*0.6213711922;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile.toFixed(4)+" "+to;
+				}
+				else if(from=='kilometer' && to=="yard")
+				 {
+					let yard= number* 1093.6132983377  ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(2)+" "+to;
+				}
+				else if(from=='kilometer' && to=="foot")
+				 {
+					let foot= number*3280.8398950131   ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+foot.toFixed(2)+" "+to;
+				}
+				else if(from=='kilometer' && to=="inch")
+				 {
+					let inch= number*39370.078740157    ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch.toFixed(2)+" "+to;
+				}
+//----------------------decimeter----------------
+
+				else if (from=='decimeter' && to=="meter")
+				 {
+					let meter=number* 0.1;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='decimeter' && to=="kilometer")
+				 {
+				 	let kilometer=number*0.0001;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='decimeter' && to=="decimeter")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='decimeter' && to=="centimeter")
+				 {
+					let centimeter= number*10 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+centimeter+" "+to;
+				}
+				else if(from=='decimeter' && to=="milimeter")
+				 {
+					let milimeter= number*100;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='decimeter' && to=="nanometer")
+				 {
+					let nanometer= number* 100000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='decimeter' && to=="mile")
+				 {
+					let mile= number*0.0009320568 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile.toFixed(6)+" "+to;
+				}
+				else if(from=='decimeter' && to=="yard")
+				 {
+					let yard= number* 0.1093613298   ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(4)+" "+to;
+				}
+				else if(from=='decimeter' && to=="foot")
+				 {
+					let foot= number*0.3280839895;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+foot.toFixed(4)+" "+to;
+				}
+				else if(from=='kilometer' && to=="inch")
+				 {
+					let inch= number*3.937007874;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch.toFixed(4)+" "+to;
+				}
+
+//----------------------centimeter----------------
+
+				else if (from=='centimeter' && to=="meter")
+				 {
+					let meter=number* 0.01 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='centimeter' && to=="kilometer")
+				 {
+				 	let kilometer=number/100000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='centimeter' && to=="decimeter")
+				 {
+				 	let decimeter=number*0.1 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='centimeter' && to=="centimeter")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='centimeter' && to=="milimeter")
+				 {
+					let milimeter= number*10;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='centimeter' && to=="nanometer")
+				 {
+					let nanometer= number* 10000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='centimeter' && to=="mile")
+				 {
+					let mile= number/160934.4;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile.toFixed(6)+" "+to;
+				}
+				else if(from=='centimeter' && to=="yard")
+				 {
+					let yard= number* 0.010936133;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(4)+" "+to;
+				}
+				else if(from=='centimeter' && to=="foot")
+				 {
+					let foot= number*0.032808399;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+"= "+foot.toFixed(4)+" "+to;
+				}
+				else if(from=='kilometer' && to=="inch")
+				 {
+					let inch= number*0.3937007874;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch.toFixed(4)+" "+to;
+				}
+//----------------------millimeter----------------
+
+				else if (from=='milimeter' && to=="meter")
+				 {
+					let meter=number* 0.001;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='milimeter' && to=="kilometer")
+				 {
+				 	let kilometer=number/100000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='milimeter' && to=="decimeter")
+				 {
+				 	let decimeter=number*0.01;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='milimeter' && to=="centimeter")
+				 {
+				 	let centimeter= number*0.1 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='milimeter' && to=="milimeter")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='milimeter' && to=="nanometer")
+				 {
+					let nanometer= number* 1000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='centimeter' && to=="mile")
+				 {
+					let mile= number/160934.4;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile.toFixed(6)+" "+to;
+				}
+				else if(from=='milimeter' && to=="yard")
+				 {
+					let yard= number* 0.0010936133 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(6)+" "+to;
+				}
+				else if(from=='milimeter' && to=="foot")
+				 {
+					let foot= number*0.0032808399 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+foot.toFixed(4)+" "+to;
+				}
+				else if(from=='milimeter' && to=="inch")
+				 {
+					let inch= number*0.0393700787 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch.toFixed(4)+" "+to;
+				}
+//----------------------nanometer----------------
+
+				else if (from=='nanometer' && to=="meter")
+				 {
+					let meter=number/1000000000 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='nanometer' && to=="kilometer")
+				 {
+				 	let kilometer=number/1000000000000  ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='nanometer' && to=="decimeter")
+				 {
+				 	let decimeter=number/100000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='nanometer' && to=="centimeter")
+				 {
+				 	let centimeter= number/10000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+centimeter+" "+to;
+				}
+				else if(from=='nanometer' && to=="milimeter")
+				 {
+				 	let milimeter=number/1000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='nanometer' && to=="nanometer")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='nanometer' && to=="mile")
+				 {
+				 	let mile=number/1609344000000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile+" "+to;
+				}
+				else if(from=='nanometer' && to=="yard")
+				 {
+					let yard= number/914400000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard+" "+to;
+				}
+				else if(from=='nanometer' && to=="foot")
+				 {
+					let foot= number/304800000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+foot+" "+to;
+				}
+				else if(from=='nanometer' && to=="inch")
+				 {
+					let inch= number/25400000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch+" "+to;
+				}	
+
+
+
+//----------------------miles----------------
+
+				else if (from=='mile' && to=="meter")
+				 {
+					let meter=number*1609.344 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='mile' && to=="kilometer")
+				 {
+				 	let kilometer=number*0.0003048 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='mile' && to=="decimeter")
+				 {
+				 	let decimeter=number*16093.44 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='mile' && to=="centimeter")
+				 {
+				 	let centimeter= number*160934.4 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='mile' && to=="milimeter")
+				 {
+				 	let milimeter=number*1609344;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='mile' && to=="nanometer")
+				 {
+					let nanometer= number* 1609344000000 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='mile' && to=="mile")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='mile' && to=="yard")
+				 {
+					let yard= number*1760;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(6)+" "+to;
+				}
+				else if(from=='mile' && to=="foot")
+				 {
+					let foot= number*5280;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+"= "+foot.toFixed(4)+" "+to;
+				}
+				else if(from=='mile' && to=="inch")
+				 {
+					let inch= number*63360;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch.toFixed(4)+" "+to;
+				}
+//----------------------yards----------------
+
+				else if (from=='yard' && to=="meter")
+				 {
+					let meter=number*0.9144;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='yard' && to=="kilometer")
+				 {
+				 	let kilometer=number*0.000914;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='yard' && to=="decimeter")
+				 {
+				 	let decimeter=number*9.144;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='yard' && to=="centimeter")
+				 {
+				 	let centimeter= number*91.44;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='yard' && to=="milimeter")
+				 {
+				 	let milimeter=number*914.4;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='yard' && to=="nanometer")
+				 {
+					let nanometer= number*914400000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='yard' && to=="mile")
+				 {
+				 	let mile=number*0.0005681818;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile+" "+to;
+				}
+				else if(from=='yard' && to=="yard")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='yard' && to=="foot")
+				 {
+					let foot= number*3;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+foot+" "+to;
+				}
+				else if(from=='yard' && to=="inch")
+				 {
+					let inch= number*36;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch+" "+to;
+				}
+
+//----------------------inch----------------
+
+				else if (from=='inch' && to=="meter")
+				 {
+					let meter=number*0.0254;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='inch' && to=="kilometer")
+				 {
+				 	let kilometer=number/39370;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='inch' && to=="decimeter")
+				 {
+				 	let decimeter=number/3.937007874;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='inch' && to=="centimeter")
+				 {
+				 	let centimeter= number*2.54 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='inch' && to=="milimeter")
+				 {
+				 	let milimeter=number*25.4 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='inch' && to=="nanometer")
+				 {
+					let nanometer= number*25400000 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='inch' && to=="mile")
+				 {
+				 	let mile=number*0.000015782;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile+" "+to;
+				}
+				else if(from=='inch' && to=="yard")
+				 {
+				 	let yard=number*0.0277777778 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(4)+" "+to;
+				}
+				else if(from=='inch' && to=="foot")
+				 {
+				 	let foot=number*0.0833333333 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+foot.toFixed(2)+" "+to;
+				}
+				else if(from=='inch' && to=="inch")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+
+//----------------------foot----------------
+
+				else if (from=='foot' && to=="meter")
+				 {
+					let meter=number*0.3048 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+meter+" "+to;
+				}
+				else if(from=='foot' && to=="kilometer")
+				 {
+				 	let kilometer=number*0.0003048 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+kilometer+" "+to;
+				}
+				else if(from=='foot' && to=="decimeter")
+				 {
+				 	let decimeter=number*3.048 ;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+decimeter+" "+to;
+				}
+				else if(from=='foot' && to=="centimeter")
+				 {
+				 	let centimeter= number*30.40;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='foot' && to=="milimeter")
+				 {
+				 	let milimeter=number*304.8;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+milimeter+" "+to;
+				}
+				else if(from=='foot' && to=="nanometer")
+				 {
+					let nanometer= number*304800000;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+nanometer+" "+to;
+				}
+				else if(from=='foot' && to=="mile")
+				 {
+				 	let mile=number*0.000189394;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+mile+" "+to;
+				}
+				else if(from=='foot' && to=="yard")
+				 {
+				 	let yard=number*0.333333;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+yard.toFixed(2)+" "+to;
+				}
+				else if(from=='foot' && to=="foot")
+				 {
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+number+" "+to;
+				}
+				else if(from=='foot' && to=="inch")
+				 {
+					let inch= number*12;
+					document.getElementById('show_length_result').innerHTML=number+" "+from+" = "+inch.toFixed(2)+" "+to;
+				}																													
+		    }
+		}
+
+//---------copy data -----------
+
+/*function copydata()
+{
+  var copyText = document.getElementById("show_length_result").value;
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}*/
+	
+	</script>
+</body>
+</html>

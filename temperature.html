@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>converter</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/temperature.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="left">
+				<a href="#">Converter</a>
+			</div>
+			<div class="right">
+				<ul>
+					<li><a href="index.html">Age</a></li>
+					<li><a href="length.html">length</a></li>
+					<li><a href="temperature.html">Temprature</a></li>
+					<li><a href="#">Image</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<section class="age">
+		<div class="content">
+			<div class="center">
+				<div class="center_left">
+		    <input type="number" name="temp" id="temp" placeholder="Temperature">
+		    </div>
+		    <div class="center_right">
+		    <select name="choose" id="choose" onchange="getSelectValue()">
+				<option value="Select_option">Select</option>
+				<option value="celcius">Celcius</option>
+				<option value="fahrenheit">Fahrenheit</option>
+			</select>
+		</div>
+		</div>
+			<span id="error" style="margin-left: 10px; margin-top: 10px;">Error message</span>
+			
+		<div class="result" id="result">
+			<span id="showres"></span>
+		</div>
+		</div>
+	</section>
+	<script src="javascript/temperature.js"></script>
+</body>
+</html>

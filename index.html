@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>converter</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="left">
+				<a href="#">Converter</a>
+			</div>
+			<div class="right">
+				<ul>
+					<li><a href="index.html">Age</a></li>
+					<li><a href="length.html">length</a></li>
+					<li><a href="temperature.html">Temprature</a></li>
+					<li><a href="#">Image</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<section class="age">
+		
+		<div class="content">
+		    <h2>Enter your date of birth</h2>
+			<input type="date" name="dob" id="dob" placeholder="date of birth"><br>
+			<span id="error">Error message</span>
+			<input type="submit" name="submit" value="submit" onclick="return agecalculator();">
+
+			<div class="result" id="result">
+				<div class="year">
+				<p> years</p>
+				<span id="year_result"></span>
+				</div>
+				<div class="month">
+				<p> months</p>
+				<span id="month_result"></span>
+				</div>
+				<div class="day">
+				<p> days</p>
+				<span id="day_result"></span>
+				</div>
+				<div class="hour">
+				<p> hours</p>
+				<span id="hours_result"></span>
+				</div>
+				<div class="minute">
+				<p> minutes</p>
+				<span id="minute_result"></span>
+				</div>
+				<div class="second">
+				<p> seconds</p>
+				<span id="second_result"></span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="javascript/age.js"></script>
+</body>
+</html>
