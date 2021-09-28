@@ -1,0 +1,68 @@
+input[type="number"]
+{
+	width: 20vw;
+    font-size: 1.2rem;
+    padding: .5rem .7em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+select
+{
+	width: 10vw;
+    font-size: 1rem;
+    padding: .5rem .7em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+option
+{
+    border: none;
+    outline: none;	
+}
+.results
+{
+	width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+#showres
+{
+	font-weight: 900;
+	font-size: 28px;
+}
+
+.center
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+
+@media (max-width:770px)
+{
+ nav{
+ 	flex-direction: column;
+ }
+	#temp
+	{
+		width: 100%;
+	    display: block;
+	}
+	#error
+	{
+		margin-bottom: -10px;	
+    }
+	#choose
+	{
+		width: 100%;
+	    display: block;
+	    margin-top: 2rem;
+	}
+}

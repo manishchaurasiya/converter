@@ -1,1 +1,287 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+body
+{
+    background: #16a085;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+h2
+{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+nav
+{
+	height: auto;
+	background: aliceblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+nav .left
+{
+	width: 50vw;
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 5rem;
+}
+nav .left a
+{
+	font-size: 2rem;
+}
+nav .right
+{
+	width: 50vw;
+	display: flex;
+	justify-content: flex-end;
+    margin-right: 5rem;
+}
+nav .right ul li
+{
+	display: inline-block;
+	padding: 1rem;
+	font-size: 1.2rem;
+}
+.age
+{
+    margin-top: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-wrap: wrap;
+}
+.content
+{
+    width: 40rem;
+    height: auto;
+    /* box-shadow: 1px 3px 2px #000; */
+    padding: 2rem;
+    background: #e5f1fb;
+    border-radius: 10px;	
+}
+.content h1
+{
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+input[type="date"]
+{
+	width: 20vw;
+    margin: auto;
+    display: block;
+    font-size: 1.2rem;
+    padding: 0.2rem .4rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+#error
+{
+    margin-bottom: 2rem;
+    color: red;
+    text-align: center;
+    display: none;
+    font-weight: 900;
+}
+input[type="submit"]
+{
+	margin: auto;
+    display: block;
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+    background: #16a085;
+    color: #fff;
+}
+.result
+{
+	width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+}
+.result p
+{
+	font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    padding: 10px;
+    background: #16a085;
 
+}
+.year, .month, .day, .hour, .minute, .second
+{
+	width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 2rem;
+    background: #fff;
+}
+#showresult
+{
+	font-weight: 900;
+}
+.ml
+{
+    margin-left: 10rem;
+}
+
+
+
+
+
+
+@media (max-width:770px)
+{
+	#dob
+	{
+		width: 90%;
+	}
+}
+	
+
+/*-----------length------*/
+
+input[type="number"]
+{
+    width: 20vw;
+    font-size: 1.2rem;
+    padding: .5rem .7em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+select
+{
+    width: 20vw;
+    font-size: 1rem;
+    padding: .5rem .7em;
+    
+    border: none;
+    outline: none;
+}
+option
+{
+    border: none;
+    outline: none;  
+}
+.show_length
+{
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+}
+
+#error1
+{
+    margin-left: 15px;
+    margin-top: 1rem;
+    color: red;
+    display: none;
+    font-weight: 900;
+    margin-left: 11rem;
+}
+.main
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:2rem;
+}
+#show_length_result
+{
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+button
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    background: #16a085;
+    color: #fff;
+    transition: all linear .4s;
+}
+button:hover
+{
+    background: darkgreen;
+    color:#fff;
+}
+
+@media (max-width: 770px)
+{
+ nav
+ {
+    flex-direction: column;
+ } 
+ nav .left a
+ {
+    margin-top: 5px;
+ }
+ nav .right a
+ {
+    margin-top: 5px;
+    font-size: 26px;
+ }
+ nav .right
+ {
+    width: 100vw;
+    justify-content: center;
+    margin-left: 7rem;
+ }  
+.age{
+    margin: 3rem;
+}
+
+.content h2
+{
+    font-size: 2.5rem;
+}
+.content .ml
+{
+    margin-left: 1rem;
+}
+.content input[type="number"]
+{
+     width: 25rem;
+    height: 3rem;
+    font-size: 1.7rem;
+}
+
+select
+{
+    width: 12rem;
+    font-size: 1.5rem;
+}
+
+
+
+
+}
